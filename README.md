@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js 14 NextAuth - Login And Register Boilerplate
 
-## Getting Started
+# Overview
+NextAuth Boilerplate is a comprehensive and highly customizable authentication solution built on the latest advancements in Next.js 14 and seamlessly integrated with NextAuth for a secure and efficient user authentication process. Designed to serve as a robust foundation for web applications, this boilerplate combines the power of Next.js, NextAuth, and MongoDB, providing developers with a feature-rich toolkit to streamline the implementation of authentication systems.
 
-First, run the development server:
+![login nextauth app](https://github.com/Kuzma02/NextJS14-NextAuth-Login-And-Register/assets/138793624/d415960f-7d12-42dd-995c-af73a5d50b29)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![signup nextauthapp](https://github.com/Kuzma02/NextJS14-NextAuth-Login-And-Register/assets/138793624/f2d1ae6c-383b-4fb3-8ff6-6fb3d8e8b608)
+
+# Key Features
+- Next.js 14
+- Cutting-Edge Technology: Stay ahead of the curve by leveraging the capabilities of Next.js 14, featuring the latest improvements, optimizations, and enhanced developer experience.
+- NextAuth Integration
+- Multi-Provider Support: Allow users to sign in using popular authentication providers such as GitHub and Google, and easily extend with additional providers.
+- Secure Authentication Flow: Implement a secure authentication flow with ease using NextAuth, a powerful authentication library that supports various providers and ensures a seamless login and registration process.
+- Extensibility: Customize authentication behavior to fit your specific requirements, whether it's adding new providers, enhancing security measures, or tailoring the user experience.
+- Easy Configuration: Seamlessly connect your Next.js application to MongoDB by configuring environment variables, making it simple to adapt to your preferred database setup.
+- Scalable Data Storage: Utilize MongoDB as the data storage solution, ensuring scalability and reliability for managing user data securely.
+
+# Multi-Provider Support
+- Social Authentication: Enable users to sign in using popular social media accounts, such as GitHub and Google, and extend the functionality to include additional authentication providers as needed.
+
+# Responsive Design
+User-Friendly Interface: Provide a seamless experience across devices with a responsive and thoughtfully designed user interface, ensuring accessibility and user engagement.
+Getting Started
+Prerequisites
+Ensure you have the following prerequisites installed:
+
+# Getting Started
+
+# Prerequisites
+- Node.js (>=18.17)
+- Internet connection
+
+# Installation
+1. Clone the repository
+
+```
+git clone https://github.com/Kuzma02/NextJS14-NextAuth-Login-And-Register
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cd folder_name
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Configure environment variables
+- In the root create .env file and configure the following variables
 
-## Learn More
+```
+MONGO_URI=
+GITHUB_ID=
+GITHUB_SECRET=
+NEXTAUTH_SECRET=
+NEXTAUTH_URL=
+GOOGLE_ID=
+GOOGLE_SECRET=
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Run the application
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+npm run dev
+```
