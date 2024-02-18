@@ -9,6 +9,7 @@ NextAuth Boilerplate is a comprehensive and highly customizable authentication s
 
 # Key Features
 - Next.js 14
+- MongoDB for storing user info
 - Cutting-Edge Technology: Stay ahead of the curve by leveraging the capabilities of Next.js 14, featuring the latest improvements, optimizations, and enhanced developer experience.
 - NextAuth Integration
 - Multi-Provider Support: Allow users to sign in using popular authentication providers such as GitHub and Google, and easily extend with additional providers.
