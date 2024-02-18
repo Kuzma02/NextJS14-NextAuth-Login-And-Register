@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
+import toast from "react-hot-toast";
 
 const RegisterPage = () => {
   const [error, setError] = useState("");
@@ -26,27 +27,23 @@ const RegisterPage = () => {
     const password = e.target[1].value;
     const confirmPassword = e.target[2].value;
 
-    
-    
-
-    
-
     if (!isValidEmail(email)) {
       setError("Email is invalid");
+      toast.error("Email is invalid");
       return;
     }
 
     if (!password || password.length < 8) {
       setError("Password is invalid");
+      toast.error("Password is invalid");
       return;
     }
 
-    if(confirmPassword !== password){
+    if (confirmPassword !== password) {
       setError("Passwords are not equal");
+      toast.error("Passwords are not equal")
       return;
     }
-
-    console.log("executed");
 
     try {
       const res = await fetch("/api/register", {
@@ -60,13 +57,16 @@ const RegisterPage = () => {
         }),
       });
       if (res.status === 400) {
-        setError("This email is already registered");
+        toast.error("This email is already registered")
+        setError("The email already in use");
       }
       if (res.status === 200) {
         setError("");
+        toast.success("Registration successful");
         router.push("/login");
       }
     } catch (error) {
+      toast.error("Error, try again")
       setError("Error, try again");
       console.log(error);
     }
@@ -131,7 +131,7 @@ const RegisterPage = () => {
                   htmlFor="confirmpassword"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
-                  Confirm Password
+                  Confirm password
                 </label>
                 <div className="mt-2">
                   <input
@@ -174,7 +174,6 @@ const RegisterPage = () => {
                 </p>
               </div>
             </form>
-
           </div>
         </div>
       </div>

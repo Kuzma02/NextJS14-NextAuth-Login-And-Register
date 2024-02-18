@@ -4,6 +4,7 @@ import "./globals.css";
 import { getServerSession } from "next-auth";
 import SessionProvider from "@/utils/SessionProvider";
 import Navbar from "@/components/Navbar";
+import Providers from "@/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +25,9 @@ export default async function RootLayout({
         <SessionProvider session={session}>
           <div className="mx-auto max-w-5xl text-2xl gap-2 mb-10">
             <Navbar />
+            <Providers>
             {children}
+            </Providers>
           </div>
         </SessionProvider>
       </body>

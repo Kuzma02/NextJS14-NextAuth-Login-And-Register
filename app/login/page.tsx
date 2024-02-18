@@ -5,6 +5,7 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import Image from "next/image";
+import toast from "react-hot-toast";
 
 
 const NextLoginPage = () => {
@@ -31,11 +32,13 @@ const NextLoginPage = () => {
 
     if (!isValidEmail(email)) {
       setError("Email is invalid");
+      toast.error("Email is invalid");
       return;
     }
 
     if (!password || password.length < 8) {
       setError("Password is invalid");
+      toast.error("Password is invalid");
       return;
     }
 
@@ -47,9 +50,11 @@ const NextLoginPage = () => {
 
     if (res?.error) {
       setError("Invalid email or password");
+      toast.error("Invalid email or password");
       if (res?.url) router.replace("/dashboard");
     } else {
       setError("");
+      toast.success("Successful login");
     }
   };
 
@@ -126,12 +131,12 @@ const NextLoginPage = () => {
                 </div>
 
                 <div className="text-sm leading-6">
-                  <a
+                  <Link
                     href="#"
                     className="text-black hover:text-gray-900"
                   >
                     Forgot password?
-                  </a>
+                  </Link>
                 </div>
               </div>
 
